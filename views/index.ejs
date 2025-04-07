@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+<body>
+    <div class="container">
+        <div class="card" >
+            <div class="card-header">
+                <h1>Famous Quotes - Admin Section</h1>
+            </div>
+            <div class="card-body">
+                <form action="/author/new">
+                    <button class="btn btn-primary btn-lg">Add Authors</button>
+                </form><br>
+            </div>
+            <div class="card-body">
+                <form action="/quote/new">
+                    <button class="btn btn-primary btn-lg">Add Quotes</button>
+                </form><br>
+            </div>
+            <div class="card-body">
+                <form action="/authors">
+                    <button class="btn btn-secondary btn-lg">List Authors</button>
+                </form><br>
+            </div>
+            <div class="card-body">
+                <form action="/quotes">
+                    <button class="btn btn-secondary btn-lg">List Quotes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

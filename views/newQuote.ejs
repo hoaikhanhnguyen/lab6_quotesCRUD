@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+<body>
+    <div class="container">
+        <h1 class="display-1"> Adding a New Quote </h1>
+
+    <form method="POST" action="/quote/new">
+        <label for="newAuthor" class="form-label">Author: </label>
+        <select id="newAuthor" name="authorId">
+            <% for (author of authors) { %>
+            <option value="<%=author.authorId%>">
+                <%= author.firstName %> <%= author.lastName %>
+            </option>
+            <% } %>
+        </select>
+        <br>
+
+        <label for="newCategory" class="form-label">Category: </label>
+        <select id="newCategory" name="category">
+            <% for (category of categories) { %>
+            <option value="<%=category.category%>">
+                <%= category.category %>
+            </option>
+            <% } %>
+        </select>
+        <br>
+
+        <label for="newLikes" class="form-label">Likes: </label>
+        <input id="newLikes" type="text" name="likes"><br>
+
+        <label for="newQuote" class="form-label">Quote: </label>
+        <textarea id="newQuote" class="form-control" name="quote"></textarea><br>
+        <br>
+
+        <button class="btn btn-primary">Add Quote</button>
+    </form>
+
+    <% if (typeof message != "undefined"){ %>
+    <h3><%=message%></h3>
+    <% } %>
+    </div>
+</body>
+</html>

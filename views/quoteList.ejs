@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+<body>
+    <div class="container">
+        <h1> Update/Delete Quotes </h1><hr>
+        <% for (i=0; i < quotes.length; i++) { %>
+        <a class="btn btn-info" href="/quote/edit?quoteId=<%=quotes[i].quoteId%>">UPDATE</a>
+        <a class="btn btn-danger" href="/quote/delete?quoteId=<%=quotes[i].quoteId%>">DELETE</a>
+        "<%=quotes[i].quote%>"
+        <hr>
+        <% } %>
+    </div>
+</body>
+</html>

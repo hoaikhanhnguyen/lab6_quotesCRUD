@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+<body>
+<div class="container">
+    <h1 class="display-1"> Updating Quote Data </h1>
+
+<form method="POST" action="/quote/edit">
+    <input type="hidden" name="quoteId" value="<%= quoteInfo[0].quoteId %>">
+
+    <label for="editAuthor" class="form-label">Author: </label>
+    <select id="editAuthor" name="authorId">
+        <% for (author of authors) { %>
+            <% if(quoteInfo[0].authorId === author.authorId) {%>
+                <option value="<%=author.authorId%>" selected="selected">
+                    <%= author.firstName %> <%= author.lastName %>
+                </option>
+             <% } else {%>
+                <option value="<%=author.authorId%>">
+                    <%= author.firstName %> <%= author.lastName %>
+                </option>
+        <%} }%>
+    </select>
+    <br>
+
+    <label for="editCategory" class="form-label">Category: </label>
+    <select id="editCategory" name="category">
+        <% for (category of categories) { %>
+            <% if(quoteInfo[0].category === category.category) {%>
+                <option value="<%=category.category%>" selected="selected">
+                    <%= category.category %>
+                </option>
+            <% } else {%>
+                <option value="<%=category.category%>">
+                    <%= category.category %>
+                </option>
+        <%} }%>
+    </select>
+    <br>
+
+    <label for="editLikes" class="form-label">Likes: </label>
+    <input id="editLikes" type="text" name="likes" value="<%=quoteInfo[0].likes%>"><br>
+
+    <label for="editQuote" class="form-label">Quote: </label>
+    <textarea id="editQuote" class="form-control" name="quote"><%=quoteInfo[0].quote%>
+    </textarea><br>
+    <button class="btn btn-info">Update Quote</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/nav.ejs") %>
+<body>
+    <div class="container">
+        <h1 class="display-1"> Adding a New Author </h1>
+
+<form method="POST" action="/author/new">
+    <label for="newfName" class="form-label">First Name: </label>
+    <input id="newfName" type="text" name="fName"><br>
+
+    <label for="newlName" class="form-label">Last Name: </label>
+    <input id="newlName" type="text" name="lName"><br>
+
+    <label for="newdob" class="form-label">Date of Birth: </label>
+    <input id="newdob" type="date" name="birthDate"><br>
+
+    <label for="newdod" class="form-label">Date of Death: </label>
+    <input id="newdod" type="date" name="deathDate"><br>
+
+    <label for="newbirthPlace" class="form-label">Birth Place: </label>
+    <input id="newbirthPlace" type="text" name="birthPlace"><br>
+
+    <label for="newSex" class="form-label">Sex: </label>
+    <select id="newSex" name="sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br>
+
+    <label for="newProfession" class="form-label">Profession: </label>
+    <input id="newProfession" type="text" name="profession"><br>
+
+    <label for="newPortrait" class="form-label">Portrait URL: </label>
+    <input id="newPortrait" type="text" name="portrait"><br>
+
+    <label for="newBio" class="form-label">Biography: </label>
+    <textarea id="newBio" class="form-control" name="bio"></textarea><br>
+    <br>
+
+    <button class="btn btn-primary">Add Author</button>
+</form>
+
+<% if (typeof message != "undefined"){ %>
+<h3><%=message%></h3>
+<% } %>
+</div>
+</body>
+</html>
